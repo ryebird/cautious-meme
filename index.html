@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Race registration form</title>
+</head>
+
+<body>
+
+
+    <br>
+    <h1>
+        <u> Race registration form</u>
+    </h1>
+    <br>
+
+    <form id="form">
+        <div class="row">
+            <div class="col-md-1">
+                <label for="staticEmail" class="col-sm-2 col-form-label">
+                    <h4> Email </h4>
+                </label>
+
+            </div>
+            <div class="col-md-9">
+                <input type='email' name='email' class="form-control" type="text" required>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                <label for="staticEmail" class="col-sm-2 col-form-label">
+                    <h4> Title </h4>
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input onchange="handleCheckboxClick(this, 'check-brother')" class="form-check-input check-brother"
+                    type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Mr</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input onchange="handleCheckboxClick(this, 'check-brother')" class="form-check-input check-brother"
+                    type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Ms</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input onchange="handleCheckboxClick(this, 'check-brother')" class="form-check-input check-brother"
+                    type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Mrs</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="firstName" class="col-sm-2 col-form-label">
+                    <h4> First Name </h4>
+                </label>
+
+
+                <input class="form-control" type="text"
+                    onKeyUp="if(/[^a-zA-Zа-яА-ЯёЁ .]/i.test(this.value)){this.value='';}" id="firstName" required>
+            </div>
+            <div class="col">
+                <label for="lastName" class="col-sm-2 col-form-label">
+                    <h4> Last Name </h4>
+                </label>
+                <input class="form-control" type="text"
+                    onKeyUp="if(/[^a-zA-Zа-яА-ЯёЁ .]/i.test(this.value)){this.value='';}" id="lastName" required>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Complete Postal Mailing Address(with Postal Code & Country) </h4>
+                </label>
+
+            </label>
+            <input type="text" class="form-control" id="formGroupExampleInput">
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <label for="staticEmail" class="col-sm-2 col-form-label">
+                    <h4> Phone </h4>
+                </label>
+            </div>
+            <div class="col-md-3">
+                <input maxlength="11" id="phoneInput" class="form-control phone-input" type="tel" pattern="8\d{10}"
+                    required>
+            </div>
+            <div class="col-md-2">
+                <label for="staticEmail" class="col-sm-2 col-form-label">
+                    <h4> Fax </h4>
+                </label>
+            </div>
+            <div class="col-md-3">
+                <input maxlength="15" id="faxInput" class="form-control" type="text">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                <label for="staticEmail" class="col-sm-2 col-form-label">
+                    <h4>Occupattion </h4>
+                </label>
+
+            </div>
+            <div class="col-md-3">
+                <input class="form-control" type="text">
+            </div>
+
+            <div class="col-md-2">
+                <h4>Marital Status</h4>
+            </div>
+            <div class="col-md-3">
+                <select class="custom-select custom-select-lg mb-3">
+                    <option value="0" selected>Single</option>
+                    <option value="1">Married</option>
+                    <option value="2">Divorced</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="staticEmail" class="col-sm-4 col-form-label">
+                    <h4> Emergency-Contact </h4>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="exampleInputEmail1" class="name">
+                    <h4>Name</h4>
+                </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="col-sm-3">
+                <label for="exampleInputEmail1">
+                    <h4>Email</h4>
+                </label>
+                <input type='email' name='email' class="form-control" type="text" required>
+            </div>
+            <div class="col-sm-3">
+                <label for="exampleInputEmail1">
+                    <h4>Phone No</h4>
+                </label>
+                <input maxlength="11" id="phoneInput1" class="form-control phone-input" type="tel" pattern="8\d{10}"
+                    required>
+            </div>
+        </div>
+
+
+        <label for="staticEmail" class="col-sm-1 col-form-label">
+            <h4> Select trip- </h4>
+        </label>
+        <input class="alls select-trip" id="select-trip-2" onchange="handleCheckboxClick(this, 'select-trip')"
+            type="checkbox" name="check" id="check"> Mt.Everest Challenge Marathon (4 day trip)
+        <input class="alls select-trip" id="select-trip-3" onchange="handleCheckboxClick(this, 'select-trip')"
+            type="checkbox" name="check" id="check"> Mt.Everest Bike Rally
+        <input class="alls select-trip" id="select-trip-1" onchange="handleCheckboxClick(this, 'select-trip')"
+            type="checkbox" name="check" id="check"> Stage Race
+
+        <div class="row">
+            <div class="col-md-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> I am a </h4>
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input im-a" type="checkbox" id="im-a1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Runner</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input im-a" type="checkbox" id="im-a2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Walker</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input im-a" type="checkbox" id="im-a3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Cyclist</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="staticEmail" class="col-sm-7 col-form-label">
+                    <h4> T shirt size </h4>
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input t-shirt" type="checkbox" onchange="handleCheckboxClick(this, 't-shirt')"
+                    id="t-shirt1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Small</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input t-shirt" type="checkbox" onchange="handleCheckboxClick(this, 't-shirt')"
+                    id="t-shirt2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Medium</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input t-shirt" type="checkbox" onchange="handleCheckboxClick(this, 't-shirt')"
+                    id="t-shirt3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Large</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input t-shirt" type="checkbox" onchange="handleCheckboxClick(this, 't-shirt')"
+                    id="t-shirt4" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">X-Large</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Smoker </h4>
+                </label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input yes-no" type="checkbox" onchange="handleCheckboxClick(this, 'yes-no')"
+                    id="yes-no1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input yes-no" type="checkbox" onchange="handleCheckboxClick(this, 'yes-no')"
+                    id="yes-no2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label for="staticEmail" class="col-sm-9 col-form-label">
+                    <h4> Room Sharing Preference </h4>
+                </label>
+
+            </div>
+            <div class="col-md-4">
+                <select class="custom-select custom-select-lg mb-6">
+                    <option value="0" selected>Room Sharing</option>
+                    <option value="1">Private Room</option>
+                    <option value="2">No Preference</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <u>
+            <h3>Passport Details</h3>
+        </u>
+        <div class="form-group">
+            <label for="formGroupExampleInput">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Exact name as it appears </h4>
+                </label>
+
+            </label>
+            <input type="text" class="form-control" onKeyUp="if(/[^a-zA-Zа-яА-ЯёЁ .]/i.test(this.value)){this.value='';}" id="formGroupExampleInput">
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Number </h4>
+                </label>
+                <input type="text" class="form-control" id="number" aria-describedby="emailHelp"
+                    oninput="validateInput()">
+            </div>
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Date Issued </h4>
+                </label>
+                <input type="date" class="form-control" id="dateIss" aria-describedby="emailHelp">
+            </div>
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Where Issued </h4>
+                </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Date Expires </h4>
+                </label>
+
+                <input type="date" class="form-control" id="date" min="" aria-describedby="emailHelp">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Date of birth </h4>
+                </label>
+                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Age </h4>
+                </label>
+                <input id="quantityInput" min="1" max="70" type="number" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+            </div>
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Place of Birth </h4>
+                </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="col-sm-2">
+                <label for="staticEmail" class="col-sm-12 col-form-label">
+                    <h4> Citizen of </h4>
+                </label>
+                <select class="custom-select custom-select-lg mb-3">
+                    <option value="0" selected>Kazakhstan</option>
+                    <option value="1">Azerbaijan</option>
+                    <option value="2">Turkey</option>
+                    <option value="3">Uzbekistan</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="link">
+            <a
+                href="https://moodle.astanait.edu.kz/pluginfile.php/160305/mod_assign/introattachment/0/lab4.pdf?forcedownload=1">
+                <h4>See booking Conditions for all the trips </h4>
+            </a>
+        </div>
+
+        <div class="agree">
+            <label>
+                <h4> I agree to all booking terms & conditions
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </h4>
+            </label>
+        </div>
+        <br>
+        <button id="submit" class="submit">Signature</button>
+    </form>
+
+</body>
+
+
+<script src="index.js"></script>
+
+</html>
